@@ -123,9 +123,9 @@ module Paperclip
     module S3
       def self.extended base
         begin
-          require 'aws-sdk'
+          require 'aws-sdk-s3'
         rescue LoadError => e
-          e.message << " (You may need to install the aws-sdk gem)"
+          e.message << " (You may need to install the aws-sdk-s3 gem)"
           raise e
         end
         if Gem::Version.new(Aws::VERSION) >= Gem::Version.new(2) &&
